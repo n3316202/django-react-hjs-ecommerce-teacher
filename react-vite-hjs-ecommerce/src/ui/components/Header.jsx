@@ -1,4 +1,6 @@
 import { Outlet } from "react-router-dom"
+import heroImg1 from '@/assets/fruits/img/hero-img-1.png'
+import heroImg2 from '@/assets/fruits/img/hero-img-2.jpg'
 
 //dev_2_fruit
 const Header = () => {
@@ -191,7 +193,7 @@ const Header = () => {
             <div className="carousel-inner" role="listbox">
               <div className="carousel-item active rounded">
                 <img
-                  src="img/hero-img-1.png"
+                  src={heroImg1}
                   className="img-fluid w-100 h-100 bg-secondary rounded"
                   alt="First slide"
                 />
@@ -201,7 +203,7 @@ const Header = () => {
               </div>
               <div className="carousel-item rounded">
                 <img
-                  src="img/hero-img-2.jpg"
+                  src={heroImg2}
                   className="img-fluid w-100 h-100 rounded"
                   alt="Second slide"
                 />
