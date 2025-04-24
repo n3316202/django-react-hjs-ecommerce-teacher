@@ -55,9 +55,11 @@ INSTALLED_APPS = [
     # dev_28
     "rest_framework", #DRF 
     "api",
+    "corsheaders",  # dev_3_Fruit
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  # dev_3_Fruit
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -67,6 +69,14 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",  # #dev_27 추가
 ]
+
+# dev_3_Fruit
+# 정확히 허용할 도메인만
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5173",  # 프론트 도메인
+# ]
+CORS_ORIGIN_ALLOW_ALL = True  # 어떠한 출처든 상관없이 정보를 공유
+
 
 ROOT_URLCONF = "config.urls"
 
