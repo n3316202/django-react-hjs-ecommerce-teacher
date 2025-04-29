@@ -110,3 +110,32 @@ class CategoriesAPI(APIView):
 #             return queryset.get(name=lookup_name)
 #         else:
 #             raise NotFound("id 또는 name 파라미터가 필요합니다.")
+
+# Create your tests here.
+from django.test import TestCase
+import jwt
+
+
+from django.test import TestCase
+from django.contrib.auth.hashers import make_password, check_password
+from cryptography.fernet import Fernet
+
+#dev_12_Fruit
+class HashAndEncryptionTestCase(TestCase):
+
+    def test_one_way_hash(self):
+        """단방향 해시 테스트"""
+        original_password = "my_secret_password"
+
+        # 비밀번호 해시
+        hashed_password = make_password(original_password)
+
+        print(hashed_password)
+        # 해시된 값은 원본과 다름
+        self.assertNotEqual(original_password, hashed_password)
+
+        # check_password로만 원본과 같은지 검증 가능
+        self.assertTrue(check_password(original_password, hashed_password))
+        self.assertFalse(check_password("wrong_password", hashed_password))
+
+   
