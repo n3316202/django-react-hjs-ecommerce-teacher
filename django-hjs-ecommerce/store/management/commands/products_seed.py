@@ -6,7 +6,6 @@ import os
 import requests
 from django.core.files import File
 from django.conf import settings
-from django.conf import settings
 from decouple import config  # 추가
 
 UNSPLASH_ACCESS_KEY = config("UNSPLASH_ACCESS_KEY")  # 여기에 발급받은 키 입력
