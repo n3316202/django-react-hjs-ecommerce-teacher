@@ -7,6 +7,7 @@ const Products = () => {
     const [categories,setCategories] = useState([])
     
     useEffect(()=>{
+        //카테고리 가져오기
         getCategories()
             .then((res)=>{
                 console.log(res)
@@ -35,54 +36,26 @@ return(
                   href="#tab-1"
                 >
                   <span className="text-dark" style={{ width: 130 }}>
-                    All Products
+                    {"전체"}
                   </span>
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  className="d-flex py-2 m-2 bg-light rounded-pill"
-                  data-bs-toggle="pill"
-                  href="#tab-2"
-                >
-                  <span className="text-dark" style={{ width: 130 }}>
-                    Vegetables
-                  </span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="d-flex m-2 py-2 bg-light rounded-pill"
-                  data-bs-toggle="pill"
-                  href="#tab-3"
-                >
-                  <span className="text-dark" style={{ width: 130 }}>
-                    Fruits
-                  </span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="d-flex m-2 py-2 bg-light rounded-pill"
-                  data-bs-toggle="pill"
-                  href="#tab-4"
-                >
-                  <span className="text-dark" style={{ width: 130 }}>
-                    Bread
-                  </span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="d-flex m-2 py-2 bg-light rounded-pill"
-                  data-bs-toggle="pill"
-                  href="#tab-5"
-                >
-                  <span className="text-dark" style={{ width: 130 }}>
-                    Meat
-                  </span>
-                </a>
-              </li>
+              
+              {categories && categories.map((category,index)=>(
+                <li className="nav-item">
+                  <a
+                    className="d-flex py-2 m-2 bg-light rounded-pill"
+                    data-bs-toggle="pill"
+                    href="#tab-2"
+                  >
+                    <span className="text-dark" style={{ width: 130 }}>
+                      {category.name}
+                    </span>
+                  </a>
+                </li>
+              ))}
+
+
             </ul>
           </div>
         </div>
