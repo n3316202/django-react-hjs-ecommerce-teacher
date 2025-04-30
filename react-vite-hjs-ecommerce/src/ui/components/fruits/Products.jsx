@@ -4,7 +4,14 @@ import { useEffect, useState } from "react"
 //dev_2_fruit
 const Products = () => {
 
+    //화면 갱신을 위한 데이타(state)
+    //state 변수 = state 가 변할때 마다 해당 컴포넌를 다시 그림 = 다시 컴포넌트를 실행
     const [categories,setCategories] = useState([])
+    
+    // 빈 배열: 처음 렌더링 때 한 번만 호출
+    // 초기화 (__init__)
+    // 비동기 통신 안됨(그래서 비동기 통신을 하고 싶을 경우 )
+    // 비동기 통신을 하고 싶을 경우 useEffect 안에 함수를 만들어서 해당 함수 호출을 하는 형식으로 비동기 통신을 함
     
     useEffect(()=>{
         //카테고리 가져오기
@@ -15,6 +22,27 @@ const Products = () => {
             })
             .catch((err)=>{console.log(err)})
     },[])
+  //   //두번째 사용방법  categories가 변경될 때마다 실행됩니다.
+  //   useEffect(()=>{
+  //     //카테고리 가져오기
+  //     getCategories()
+  //         .then((res)=>{
+  //             console.log(res)
+  //             setCategories(res.data)
+  //         })
+  //         .catch((err)=>{console.log(err)})
+  // },[categories])
+
+  //세번째 사용방법  컴포넌트가 리렌더링될 때마다 실행됩니다.
+  //   useEffect(()=>{
+  //     //카테고리 가져오기
+  //     getCategories()
+  //         .then((res)=>{
+  //             console.log(res)
+  //             setCategories(res.data)
+  //         })
+  //         .catch((err)=>{console.log(err)})
+  // } )
 
 
 return(
