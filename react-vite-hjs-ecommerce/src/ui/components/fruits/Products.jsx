@@ -94,7 +94,7 @@ return(
                     filterProucts.map((product)=>(
                     <div key={product.id} className="col-md-6 col-lg-4 col-xl-3">
                       <div className="rounded position-relative fruite-item">
-                        <div className="fruite-img">
+                        <div className="fruite-img ratio ratio-4x3 overflow-hidden rounded-top">
                           <img
                             src={`${import.meta.env.VITE_REQUEST_URL}${product.image}`}
                             className="img-fluid w-100 rounded-top"
@@ -113,8 +113,9 @@ return(
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit sed do eiusmod te incididunt
                           </p>
-                          <div className="d-flex justify-content-between flex-lg-wrap">
-                            <p className="text-dark fs-5 fw-bold mb-0">
+                          {/* dev_4_Fruit */}
+                          <div className="d-flex flex-column align-items-center justify-content-between flex-lg-wrap">
+                            <p className="text-dark fs-5 fw-bold mb-2">
                               ${product.price} / kg
                             </p>
                             <a
