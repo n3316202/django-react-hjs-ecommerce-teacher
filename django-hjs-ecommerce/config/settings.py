@@ -266,5 +266,16 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
+# 도져(djoser) 커스텀마이징 세팅
+DJOSER = {
+    "USER_ID_FIELD": "id",
+    "LOGIN_FIELD": "username",  # 또는 email
+    "SERIALIZERS": {
+        "user_create": "accounts.serializers.UserCreateSerializer",
+        "user": "accounts.serializers.UserSerializer",
+        "current_user": "accounts.serializers.UserSerializer",
+    },
+    "CREATE_SESSION_ON_LOGIN": True,  # 로그인하면 세션도 생성됨
+}
 
 
