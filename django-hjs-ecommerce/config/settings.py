@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "rest_framework", #DRF 
     "api",
     "corsheaders",  # dev_3_Fruit
+    "djoser" # dev_5_Fruit
 ]
 
 MIDDLEWARE = [
@@ -231,3 +232,22 @@ SOCIALACCOUNT_PROVIDERS = {
         },
     }
 }
+
+
+# dev_5_Fruit
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+}
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=3), #timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}
+
+
+
