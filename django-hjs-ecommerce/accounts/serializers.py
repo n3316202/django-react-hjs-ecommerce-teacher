@@ -15,7 +15,7 @@ class UserCreateSerializer(BaseUserCreateSerializer):
             "password",
             "gender",
             "job",
-            #"old_cart",
+            #   "old_cart",
         )
 
 class UserSerializer(BaseUserSerializer):
