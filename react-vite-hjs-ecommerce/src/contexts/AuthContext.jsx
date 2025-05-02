@@ -31,8 +31,7 @@ export const AuthProvider = ({children}) =>{
             throw error;
         }
     }
-    
-    
+        
     const getUser = async () => {
         try{
             const response = await getCurrentUser()
