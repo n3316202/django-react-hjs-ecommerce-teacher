@@ -1,4 +1,4 @@
-import { loginUser } from "@/api/AuthApi";
+import { getCurrentUser, loginUser } from "@/api/AuthApi";
 import { createContext, useContext, useState } from "react";
 
 //dev_5_Fruit
