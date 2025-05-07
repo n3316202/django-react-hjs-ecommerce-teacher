@@ -9,8 +9,8 @@ createRoot(document.getElementById('root')).render(
   //dev_5_Fruit
   //dev_6_Fruit
   <AuthProvider>
-    <CartProvider> 
+     <CartProvider>   
       <RouterProvider router={router}/>
-    </CartProvider>
+     </CartProvider>  
   </AuthProvider>
 )
