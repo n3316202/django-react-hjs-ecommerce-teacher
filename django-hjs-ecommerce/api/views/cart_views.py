@@ -51,7 +51,7 @@ class CartMergeAPIView(APIView):
             else:
                 old_cart[product_id] = {"quantity": quantity}
 
-        user.old_cart = json.dumps(old_cart)
+        user.old_cart = json.dumps(old_cart) #json을 string 만들어서 집어 넣어야함
         user.save()
 
         return Response({"message": "장바구니가 병합되었습니다."})
