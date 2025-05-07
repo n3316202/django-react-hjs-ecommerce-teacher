@@ -12,7 +12,7 @@ const Products = () => {
     const [products,setProducts] = useState([])
     
     //dev_6_Fruit
-    // const {addToCart} = useCart()
+    const {addToCart} = useCart()
     
     useEffect(()=>{
         //카테고리 가져오기
@@ -123,7 +123,7 @@ return(
                             </p>
                             {/* dev_6_Fruit */}
                             <button
-                              // onClick={()=> addToCart(product)}
+                              onClick={()=> addToCart(product)}
                               className="btn border border-secondary rounded-pill px-3 text-primary"
                             >
                               <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
