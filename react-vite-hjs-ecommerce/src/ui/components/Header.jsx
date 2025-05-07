@@ -15,6 +15,9 @@ const Header = () => {
     logout()
   }
 
+  //dev_6_Fruit 장바구니 카트 숫자
+  //const { getTotalItems} = useCart()
+
 return (
         <>
   {/* Spinner Start */}
