@@ -39,6 +39,10 @@ const handleRemoveItem = (product) => {
   removeFromCart(product.id)
 }
 
+const handleIncrease = (item) => {
+  addToCart(item.product,1)
+}
+
 return (
 <>
   {/* Single Page Header start */}
@@ -96,7 +100,7 @@ return (
                   style={{ width: 100 }}
                 >
                   <div className="input-group-btn">
-                    <button className="btn btn-sm btn-minus rounded-circle bg-light border">
+                    <button onClick={()=>handleDecrease(item)} className="btn btn-sm btn-minus rounded-circle bg-light border">
                       <i className="fa fa-minus" />
                     </button>
                   </div>
@@ -106,7 +110,7 @@ return (
                     value={item.quantity}
                   />
                   <div className="input-group-btn">
-                    <button className="btn btn-sm btn-plus rounded-circle bg-light border">
+                    <button onClick={()=>handleIncrease(item)} className="btn btn-sm btn-plus rounded-circle bg-light border">
                       <i className="fa fa-plus" />
                     </button>
                   </div>

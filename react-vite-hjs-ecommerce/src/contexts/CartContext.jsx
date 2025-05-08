@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useAuth } from "./AuthContext";
-import { deleteCart, getCarts, mergeCart } from "@/api/CartApi";
+import { addCart, deleteCart, getCarts, mergeCart } from "@/api/CartApi";
 
 //dev_6_Fruits
 const CartContext = createContext();
@@ -88,9 +88,14 @@ export const CartProvider = ({ children }) => {
   const addToCart = async (product, quantity = 1) => {
     const productId = product.id;
     const price = product.price;
-
+    //dev_7_Fruit
     if (user) {
       try {
+
+        const response = await addCart(product.id , quantity)
+        console.log(response)
+        
+        loadCart() 
         
       } catch (err) {
         console.error("서버 장바구니 추가 실패", err);
