@@ -10,6 +10,7 @@ from rest_framework.views import APIView
 from decimal import Decimal
 from store.models import Product
 from api.serializers.product_serializers import ProductSerializer
+from cart.cart import CartDRF
 class CartAPIView(APIView):
     # permission_classes = [IsAuthenticated]
     
@@ -63,7 +64,24 @@ class CartAPIView(APIView):
         pass
 
     def delete(self,request):
-        pass
+        """
+        old_cart에서 상품 제거 또는 전체 삭제
+        """
+        user = request.user
+        product_id = request.data.get("productId")
+
+        cart = CartDRF(request)
+
+        #특정 상품제외
+        if product_id:
+            try:
+                product = Product.objects.get(id=product_id)
+                cart.remove_from_old_cart(user,product_id)
+                return  Response({"message": "상품이 장바구니에서 제거되었습니다."}) 
+            except Product.DoesNotExist:
+                return Response({"error": "상품이 존재하지 않습니다."}, status=404)
+
+
 
 
 import json

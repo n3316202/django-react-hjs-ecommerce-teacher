@@ -21,7 +21,7 @@ import { Link, useNavigate } from 'react-router-dom';
 // }
 const Cart = () => {
 
-const {userCart,addToCart} = useCart()
+const {userCart,addToCart, removeFromCart} = useCart()
 
 const {user} = useAuth() //유저 상태
 const navigate = useNavigate();
@@ -34,8 +34,10 @@ useEffect(()=>{
     navigate("/login")
   }
 },[user])  
-console.log("=============")
-console.log(userCart)
+
+const handleRemoveItem = (product) => {
+  removeFromCart(product.id)
+}
 
 return (
 <>
@@ -114,7 +116,7 @@ return (
                 <p className="mb-0 mt-4">{formatCurrencyWithWon(Math.floor(item.total_price))}</p>
               </td>
               <td>
-                <button className="btn btn-md rounded-circle bg-light border mt-4">
+                <button onClick={ () => handleRemoveItem(item.product) } className="btn btn-md rounded-circle bg-light border mt-4">
                   <i className="fa fa-times text-danger" />
                 </button>
               </td>
