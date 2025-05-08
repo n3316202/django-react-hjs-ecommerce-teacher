@@ -43,6 +43,15 @@ const handleIncrease = (item) => {
   addToCart(item.product,1)
 }
 
+const handleDecrease = (item) => {
+  
+  if(item.quantity > 1)
+    addToCart(item.product, -1)
+  else if (item.quantity == 1)
+    handleRemoveItem(item.product)
+}
+
+
 return (
 <>
   {/* Single Page Header start */}
