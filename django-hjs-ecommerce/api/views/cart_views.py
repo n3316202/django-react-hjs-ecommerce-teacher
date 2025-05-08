@@ -67,9 +67,8 @@ class CartAPIView(APIView):
         """
         old_cart에서 상품 제거 또는 전체 삭제
         """
-        user = request.user
-        product_id = request.data.get("productId")
-
+        user = request.user       
+        product_id =  request.data.get("product_id")        
         cart = CartDRF(request)
 
         #특정 상품제외
@@ -97,7 +96,7 @@ class CartMergeAPIView(APIView):
         localStorage의 장바구니를 서버 old_cart에 병합
         """
         user = request.user
-
+       
         local_storage_cart = request.data.get("cart","{}")
 
         local_storage_cart = json.loads(local_storage_cart or "{}")

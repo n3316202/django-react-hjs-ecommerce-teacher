@@ -21,7 +21,15 @@ export const mergeCart = (guestCart) => {
     });
 };
 
-//장바구니 상품 제거
-export const deleteCart = (productId) =>{
-  return http.delete("/api/cart/",{productId})
-}
+// 장바구니에서 상품 제거 또는 전체 비우기
+export const deleteCart = (product_id = null) => {
+  const config = {
+    data: {},
+  };
+
+  if (product_id) {
+    config.data.product_id = product_id;
+  }
+
+  return http.delete("/api/cart/", config);
+};
