@@ -27,10 +27,6 @@ const handleChange = (event) => {
   setShippingData((prev) => ({ ...prev, [name]: value }))
 }
 
-
-
-
-
 return (
   <>
   <div className="container-fluid page-header py-5">
