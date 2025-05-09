@@ -182,7 +182,7 @@ return (
                     </td>
                     <td className="py-5">
                       <div className="py-3 border-bottom border-top">
-                        <p className="mb-0 text-dark">$414.00</p>
+                        <p className="mb-0 text-dark">{userCart && formatCurrencyWithWon(userCart.cart_total_price)}</p>
                       </div>
                     </td>
                   </tr>
@@ -250,7 +250,7 @@ return (
                     <td className="py-5" />
                     <td className="py-5">
                       <div className="py-3 border-bottom border-top">
-                        <p className="mb-0 text-dark">$135.00</p>
+                        <p className="mb-0 text-dark">{userCart && formatCurrencyWithWon(userCart.cart_total_price)}</p>
                       </div>
                     </td>
                   </tr>
