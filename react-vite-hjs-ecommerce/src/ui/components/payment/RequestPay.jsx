@@ -2,7 +2,7 @@ import { createPayment } from "@/api/PaymentApi";
 
 const RequestPay = (shippingData, cart=null, pg="kakaopay",pay_method='card') => {
     
-    const impCode = 'imp43216235' //상태코드
+    const impCode = 'imp43216235' //상점코드
 
     // const { cartItems } = useCart() 함수에서는 컨텍스트 호출 불가
     // Promise로 래핑하여 비동기 처리를 await로 받을 수 있도록 함
@@ -33,8 +33,7 @@ const RequestPay = (shippingData, cart=null, pg="kakaopay",pay_method='card') =>
                 const res = await createPayment(shippingData, rsp.imp_uid, rsp.paid_amount)
                 
                 console.log("✅ 서버처리 완료", res)                
-                resolve(true) // ✅ 성공 시 true 반환
-                
+                resolve(true) // ✅ 성공 시 true 반환           
                 
 
 

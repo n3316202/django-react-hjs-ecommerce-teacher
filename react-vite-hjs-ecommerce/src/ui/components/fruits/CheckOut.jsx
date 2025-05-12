@@ -44,7 +44,6 @@ const handlePayment = async () => {
   } catch (error) {
     console.error("결재 실패:", error)
   }
-
 }
 
 

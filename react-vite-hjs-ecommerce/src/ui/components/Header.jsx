@@ -11,9 +11,12 @@ const Header = () => {
   //dev_5_Fruit
   const{user,logout} = useAuth();
   console.log(user)
+  
+  const { clearCart } = useCart()
 
   const logoutHandle = () =>{
     logout()
+    clearCart()
   }
 
   //dev_6_Fruit 장바구니 카트 숫자

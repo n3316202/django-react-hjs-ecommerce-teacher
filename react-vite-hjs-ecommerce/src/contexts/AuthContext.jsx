@@ -52,7 +52,7 @@ export const AuthProvider = ({children}) =>{
         localStorage.removeItem("refresh");
 
          //dev_7_Fruit
-        localStorage.removeItem("cart");       
+        //localStorage.removeItem("cart");       
     }
 
 
