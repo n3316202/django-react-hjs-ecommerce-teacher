@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     "rest_framework", #DRF 
     "api",
     "corsheaders",  # dev_3_Fruit
-    "djoser" # dev_5_Fruit
+    "djoser", # dev_5_Fruit
     #dev_9_1_Fruit REST API 기반 소셜로그인
     "rest_framework.authtoken",
     "dj_rest_auth", # REST API 기반 소셜 로그인 모듈
@@ -290,3 +290,8 @@ DJOSER = {
 # dev_9_1_Fruit
 # dj_rest_auth 을 위한 세팅
 SOCIALACCOUNT_ADAPTER = "accounts.adapters.KakaoSocialAccountAdapter"
+# 3.0.0버전 이상
+REST_AUTH = {
+    "USE_JWT": True,
+    "JWT_AUTH_HTTPONLY": False, #refresh 토큰 : True 이면 refresh 토큰이 오지 않음
+}
