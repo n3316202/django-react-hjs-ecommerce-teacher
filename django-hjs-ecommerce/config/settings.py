@@ -77,9 +77,9 @@ MIDDLEWARE = [
 
 # dev_3_Fruit
 # 정확히 허용할 도메인만
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5173",  # 프론트 도메인
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # 프론트 도메인
+]
 CORS_ORIGIN_ALLOW_ALL = True  # 어떠한 출처든 상관없이 정보를 공유
 
 
@@ -296,9 +296,9 @@ REST_AUTH = {
     "USE_JWT": True,
     "JWT_AUTH_HTTPONLY": True, #dev_9_2_Fruit
     'JWT_AUTH_REFRESH_COOKIE' : "refresh_token", #dev_9_2_Fruit
-    'JWT_AUTH_COOKIE_USE_CSRF' : True, #dev_9_2_Fruit
-    'SESSION_LOGIN' :True, #dev_9_2_Fruit 
-    'JWT_AUTH_SAMESITE': 'None',#dev_9_2_Fruit 
+    #'JWT_AUTH_COOKIE_USE_CSRF' : True, #dev_9_2_Fruit
+    'SESSION_LOGIN' :False, #dev_9_2_Fruit 
+    #'JWT_AUTH_SAMESITE': 'None',#dev_9_2_Fruit 
 }
 
 # dev_9_2_Fruit
@@ -317,3 +317,6 @@ ACCOUNT_EMAIL_VERIFICATION = "none"  # 개발 중에는 'none' 추천
 ACCOUNT_LOGOUT_ON_GET = True 
 SOCIALACCOUNT_LOGIN_ON_GET = True #브라우저에서 단순히 링크 클릭이나 리다이렉트로 로그아웃을 시킬 수 있게 하려면 GET 요청을 허용해야 함.
 
+# 개발 환경이면 False, 운영이면 True
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
