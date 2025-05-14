@@ -292,19 +292,22 @@ DJOSER = {
 # dj_rest_auth 을 위한 세팅
 SOCIALACCOUNT_ADAPTER = "accounts.adapters.KakaoSocialAccountAdapter"
 # 3.0.0버전 이상
+#dev_9_2_Fruit
 REST_AUTH = {
     "USE_JWT": True,
-    "JWT_AUTH_HTTPONLY": True, #dev_9_2_Fruit
-    'JWT_AUTH_REFRESH_COOKIE' : "refresh_token", #dev_9_2_Fruit
-    'SESSION_LOGIN' :False, #dev_9_2_Fruit 
-    'JWT_AUTH_SAMESITE': 'Lax',#dev_9_2_Fruit 
-    'JWT_AUTH_COOKIE_USE_CSRF' : False, #dev_9_2_Fruit    
+    "JWT_AUTH_HTTPONLY": True, 
+    'JWT_AUTH_REFRESH_COOKIE' : "refresh_token", 
+    'SESSION_LOGIN' :False, 
+    'JWT_AUTH_SAMESITE': 'Lax',
+    'JWT_AUTH_COOKIE_USE_CSRF' : False, 
+    #시리얼라이져 세팅
+    'USER_DETAILS_SERIALIZER': "accounts.serializers.UserResAuthSerializer",
+    'REGISTER_SERIALIZER': 'accounts.serializers.UserRegisterRestAuthSerializer',
 }
 
 # dev_9_2_Fruit
 #브라우저는 axios의 withCredentials: true 요청 시 쿠키를 포함해 전송
 CORS_ALLOW_CREDENTIALS = True
-
 
 # 로그인 방식: 이메일로 로그인
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
