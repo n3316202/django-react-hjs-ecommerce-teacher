@@ -8,7 +8,11 @@ import { Link, useNavigate } from 'react-router-dom';
 
 //dev_10_Fruit
 const Shop = () => {
-  return (
+
+  
+
+
+return (
 <>
   {/* Single Page Header start */}
   <div className="container-fluid page-header py-5">
