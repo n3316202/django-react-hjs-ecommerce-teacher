@@ -14,14 +14,18 @@ export const getProducts = () => {
 
 export const getProductsPaging = ({
     page = 1,
-    search = ""
+    search = "",
+    ordering = "",
+    page_size = 12 
 }) => {
 
     const params = {
         page, 
-        search  
+        search,
+        ordering,
+        page_size
     }
-    //api/product-list/?page=1&search=컴퓨터
+    //api/product-list/?page=1&search=컴퓨터&ordering=-id
     return http.get("/api/product-list/",{params})
 }
 

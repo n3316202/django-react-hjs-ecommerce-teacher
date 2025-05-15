@@ -54,7 +54,7 @@ class CategoriesAPI(APIView):
 class CategoryAPI(APIView):
 
     def get(self, request, pk):
-        category = _or_404(Category, id=pk)
+        category = get_object_or_404(Category, id=pk)
         serializer = CategorySimpleSerializer(category)
         return Response(serializer.data)
 
@@ -250,5 +250,7 @@ from rest_framework import filters
 #dev_3_Fruit
 class CategoryViewSet(ModelViewSet):
     queryset = Category.objects.all()
-    serializer_class = CategorySimpleSerializer
+    #serializer_class = CategorySimpleSerializer
+    #dev_10_Fruit
+    serializer_class = CategorySerializer
 

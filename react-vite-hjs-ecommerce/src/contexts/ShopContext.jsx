@@ -11,6 +11,9 @@ export const ShopProvider = ({children}) => {
   const [currentPage,setCurrentPage] = useState(1)
   const [products,setProducts] = useState([])
   const [search,setSearch] = useState("")
+  const [ordering,setOdering] = useState("")
+  
+
 
   // {
   //   "count": 21,
@@ -37,7 +40,8 @@ export const ShopProvider = ({children}) => {
     try {
       const resonse = await getProductsPaging({
         page : currentPage,
-        search
+        search,
+        ordering,
       })
       console.log(resonse.data)
       setProducts(resonse.data.results);
@@ -50,13 +54,17 @@ export const ShopProvider = ({children}) => {
   //조건이 변경될때 마다 API 다시 호출
   useEffect(()=>{
       fetchProducsts()
-  },[currentPage,search])
+  },[currentPage,search,ordering])
 
   const value = {
     search,
     setSearch,
     currentPage,
-    setCurrentPage
+    setCurrentPage,
+    products,
+    setProducts,
+    ordering,
+    setOdering,
   }
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>
