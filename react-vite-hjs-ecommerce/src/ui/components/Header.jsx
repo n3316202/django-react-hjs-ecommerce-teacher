@@ -89,9 +89,10 @@ return (
             <Link to = "/" className="nav-item nav-link active">
               Home
             </Link>
-            <a href="shop.html" className="nav-item nav-link">
+             {/* dev_10_Fruit */}
+            <Link to="/shop" className="nav-item nav-link">
               Shop
-            </a>
+            </Link>
             <a href="shop-detail.html" className="nav-item nav-link">
               Shop Detail
             </a>
