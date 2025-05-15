@@ -1,15 +1,11 @@
-import { getCategories } from "@/api/CategoryApi"
-import { getProducts } from "@/api/ProductApi"
-import { useAuth } from "@/contexts/AuthContext"
-import { useCart } from "@/contexts/CartContext"
-import { formatCurrency, formatCurrencyWithWon } from "@/utils/format"
-import { useEffect, useState } from "react"
-import { Link, useNavigate } from 'react-router-dom';
+
+import { useShop } from "@/contexts/ShopContext"
 
 //dev_10_Fruit
 const Shop = () => {
 
-  
+const {setSearch} = useShop()
+const handleSearchChange = (event)=>{setSearch(event.target.value)}
 
 
 return (
@@ -42,6 +38,7 @@ return (
                   className="form-control p-3"
                   placeholder="keywords"
                   aria-describedby="search-icon-1"
+                  onChange={handleSearchChange}
                 />
                 <span id="search-icon-1" className="input-group-text p-3">
                   <i className="fa fa-search" />

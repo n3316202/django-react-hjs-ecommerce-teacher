@@ -12,3 +12,16 @@ export const getProducts = () => {
     return http.get('/api/products/')
 }
 
+export const getProductsPaging = ({
+    page = 1,
+    search = ""
+}) => {
+
+    const params = {
+        page, 
+        search  
+    }
+    //api/product-list/?page=1&search=컴퓨터
+    return http.get("/api/product-list/",{params})
+}
+

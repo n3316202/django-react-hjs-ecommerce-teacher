@@ -9,6 +9,7 @@ import { ShopProvider } from './contexts/ShopContext.jsx'
 createRoot(document.getElementById('root')).render(
   //dev_5_Fruit
   //dev_6_Fruit
+  //dev_10_Fruit
   <AuthProvider>
     <ShopProvider>
       <CartProvider>    
