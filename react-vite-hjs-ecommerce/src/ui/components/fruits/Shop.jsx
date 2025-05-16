@@ -6,10 +6,10 @@ import { useEffect, useState } from "react"
 //dev_10_Fruit
 const Shop = () => {
 
+
 const {setSearch,products,setOdering} = useShop()
 //categories = null
 const [categories, setCategories] = useState([])
-
 
 
 //동기화 지원 안함
@@ -96,19 +96,7 @@ return (
                     <h4>Categories</h4>
                     <ul className="list-unstyled fruite-categorie">
                       
-                      { categories && categories.map((category, index)=>(
-                        
-                        <li key={index}>
-                          <div className="d-flex justify-content-between fruite-name">
-                            <a href="#">
-                              <i className="fas fa-apple-alt me-2" />
-                              {category.name}
-                            </a>
-                            <span>({category.products.length})</span>
-                          </div>
-                        </li>
-
-                      ))}            
+         
                      
                       
                     </ul>
