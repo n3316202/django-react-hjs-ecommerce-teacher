@@ -31,3 +31,6 @@ export const getProductsPaging = ({
     return http.get("/api/product-list/",{params})
 }
 
+export const getProductMaxPrice = ()=>{
+    return http.get(`/api/product-list/max-price/`)
+}
