@@ -334,8 +334,8 @@ SOCIALACCOUNT_LOGIN_ON_GET = True #브라우저에서 단순히 링크 클릭이
 SPECTACULAR_SETTINGS = {
     # General schema metadata. Refer to spec for valid inputs
     # https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#openapi-object
-    'TITLE': '쇼핑몰 API Document',
-    'DESCRIPTION': '이 문서는 쇼핑몰과 관련 API 문서입니다.',
+    'TITLE': 'drf-spectacular API Document',
+    'DESCRIPTION': 'drf-specatular 를 사용해서 만든 API 문서입니다.',
     'SWAGGER_UI_SETTINGS': {
         'dom_id': '#swagger-ui',
         'layout': 'BaseLayout', 

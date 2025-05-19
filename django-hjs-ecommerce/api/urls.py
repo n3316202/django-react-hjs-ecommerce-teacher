@@ -37,9 +37,6 @@ router.register("payments",PaymentViewSet)
 from api.views.product_views import ProductViewSet
 router.register("product-list",ProductViewSet)
 
-# dev_11_Fruit
-from drf_spectacular.views import SpectacularJSONAPIView, SpectacularYAMLAPIView, SpectacularSwaggerView, \
-    SpectacularRedocView
 
 urlpatterns = [
     # path("hello-world/", base_views.hello_world),
@@ -93,11 +90,6 @@ urlpatterns = [
     path("dj-rest-auth/", include("dj_rest_auth.urls")),
     path("dj-rest-auth/registration/", include("dj_rest_auth.registration.urls")),
     path("dj-rest-auth/kakao/", social_views.KakaoLoginView.as_view(), name="kakao_login"),
-    #dev_11_Fruit
-    path("swagger.json/", SpectacularJSONAPIView.as_view(), name="schema-json"),
-    path("swagger.yaml/", SpectacularYAMLAPIView.as_view(), name="swagger-yaml"),
-    path("swagger/", SpectacularSwaggerView.as_view(url_name="schema-json"), name="swagger-ui", ),
-    path("redoc/", SpectacularRedocView.as_view(url_name="schema-json"), name="redoc", ),
 ]
 
 #https://dj-rest-auth.readthedocs.io/en/latest/

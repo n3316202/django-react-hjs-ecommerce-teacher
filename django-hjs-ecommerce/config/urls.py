@@ -3,6 +3,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+# dev_11_Fruit
+from drf_spectacular.views import SpectacularJSONAPIView, SpectacularYAMLAPIView, SpectacularSwaggerView, \
+    SpectacularRedocView
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("store.urls")),  # dev_1
@@ -11,7 +16,12 @@ urlpatterns = [
     path("orders/", include("orders.urls")),  # dev_24
     path("payment/", include("payment.urls")),  # dev_26
     path("accounts/", include("allauth.urls")),  # # dev_27 소셜로그인
-    path("api/", include("api.urls")),  # dev_28    
+    path("api/", include("api.urls")),  # dev_28   
+    #dev_11_Fruit
+    path("swagger.json/", SpectacularJSONAPIView.as_view(), name="schema-json"),
+    path("swagger.yaml/", SpectacularYAMLAPIView.as_view(), name="swagger-yaml"),
+    path("swagger/", SpectacularSwaggerView.as_view(url_name="schema-json"), name="swagger-ui", ),
+    path("redoc/", SpectacularRedocView.as_view(url_name="schema-json"), name="redoc", ), 
 ]
 
 # dev_2
