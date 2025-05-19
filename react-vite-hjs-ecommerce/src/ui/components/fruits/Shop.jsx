@@ -105,6 +105,7 @@ useEffect(()=>{
 },[limitPrice])
 
 //슬라이더 값 변경 처리
+//GET /api/product-list/?page=1&search=&ordering=-price&category=&page_size=12&min_price=0&max_price=123 HTTP/1.1
 const handlePriceChange = (e) => {
   const value = parseFloat(e.target.value)
 

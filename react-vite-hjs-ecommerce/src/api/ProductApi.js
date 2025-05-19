@@ -37,7 +37,7 @@ export const getProductsPaging = ({
         params.max_price = max_price
     
 
-    //api/product-list/?page=1&search=컴퓨터&ordering=-id&category=1
+    //api/product-list/?page=1&search=컴퓨터&ordering=-id&category=1&min_price=0&max_price=150
     return http.get("/api/product-list/",{params})
 }
 
